@@ -9,7 +9,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // 禁用 Turbopack，使用 Webpack 以兼容 WalletConnect
+  // 兼容 Turbopack 和 Webpack
+  turbopack: {},
   webpack: (config) => {
     config.externals.push("pino-pretty", "lokijs", "encoding");
     return config;
